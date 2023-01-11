@@ -1,14 +1,18 @@
 import React from "react";
-import { urlFor, client } from "../../LIB/client";
+import { client, urlFor } from "../../LIB/client";
 
-const ProductDetails = (product, products) => {
+const ProductDetails = ({ product, products }) => {
+  console.log(product);
   const { image, name, details, price } = product;
   return (
     <div>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img src="" alt="" />
+            <img
+              src={urlFor(image && image[0])}
+              className="product-detail-image"
+            />
           </div>
         </div>
       </div>
@@ -44,7 +48,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
-
+  console.log(product);
   return {
     props: { products, product },
   };
