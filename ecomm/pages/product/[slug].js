@@ -2,7 +2,6 @@ import React from "react";
 import { client, urlFor } from "../../LIB/client";
 
 const ProductDetails = ({ product, products }) => {
-  console.log(product);
   const { image, name, details, price } = product;
   return (
     <div>
@@ -48,7 +47,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
-  console.log(product);
   return {
     props: { products, product },
   };
