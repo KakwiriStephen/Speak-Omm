@@ -56,10 +56,10 @@ const Cart = () => {
                 <div className="item-desc">
                   <div flex top>
                     <h5>{item.name}</h5>
-                    <h4>{item.price}</h4>
+                    <h4>Ksh.{item.price}</h4>
                   </div>
                   <div className="flex bottom">
-                    <div className="quantity-desc">
+                    <p className="quantity-desc">
                       <span className="minus" onClick="">
                         <AiOutlineMinus />
                       </span>
@@ -69,12 +69,30 @@ const Cart = () => {
                       <span className="plus" onClick="">
                         <AiOutlinePlus />
                       </span>
+                    </p>
+                    <div>
+                      <button type="button" className="remove-item" onClick="">
+                        <TiDeleteOutline />
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
         </div>
+        {cartItems.length >= 1 && (
+          <div className="cart-bottom">
+            <div className="total">
+              <h3>Subtotal:</h3>
+              <h3>Ksh{totalPrice}</h3>
+            </div>
+            <div className="btn-container">
+              <button className="btn" type="button" onClick="">
+                Pay with Stripe
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
