@@ -10,10 +10,27 @@ import { TiDeleteOutline } from "react-icons/ti";
 import toast from "react-hot-toast";
 
 import { useStateContext } from "../context/StateContext";
-import { urlFor } from "../lib/client";
+import { urlFor } from "../LIB/client";
 
 const Cart = () => {
-  return <div>Cart</div>;
+  const cartRef = useRef();
+  const { totalPrice, totalQuantities, CartItems, setShowCart } =
+    useStateContext();
+  return (
+    <div className="cart-wrapper" ref={cartRef}>
+      <div className="cart-container">
+        <button
+          type="button"
+          className="cart-heading"
+          onClick={() => setShowCart(false)}
+        >
+          <AiOutlineLeft />
+          <span className="heading">Your Cart</span>
+          <span className="cart-num-items">({totalQuantities} Items)</span>
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default Cart;
