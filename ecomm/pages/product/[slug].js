@@ -96,6 +96,7 @@ const ProductDetails = ({ product, products }) => {
   );
 };
 
+//using next for queries
 export const getStaticPaths = async () => {
   const query = `*[_type == "product"] {
       slug {

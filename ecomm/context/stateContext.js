@@ -43,7 +43,7 @@ export const StateContext = ({ children }) => {
     toast.success(`${qty} ${product.name} added to the cart.`);
   };
 
-  //on remove
+  //on Remove
 
   const onRemove = (product) => {
     foundProduct = cartItems.find((item) => item._id === product._id);
