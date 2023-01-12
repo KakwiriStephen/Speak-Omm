@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { client, urlFor } from "../../LIB/client";
 import {
   AiOutlineMinus,
@@ -8,24 +9,35 @@ import {
 } from "react-icons/ai";
 
 import { Product } from "../../components";
+import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
+
+  const [index, setIndex] = useState(0);
+
+  const { decQty, incQty, qty, onAdd } = useStateContext();
   return (
     <div>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
             <img
-              src={urlFor(image && image[0])}
+              src={urlFor(image && image[index])}
               className="product-detail-image"
             />
           </div>
-          {/* <div className="small-images-container">
+          <div className="small-images-container">
             {image?.map((item, i) => (
-              <img src={urlFor(item)} className="" onMouseEnter="" />
+              <img
+                src={urlFor(item)}
+                className={
+                  i === index ? "small-image selected-image" : "small-image"
+                }
+                onMouseEnter={() => setIndex(i)}
+              />
             ))}
-          </div> */}
+          </div>
         </div>
         <div className="product-detail-desc">
           <h1>{name}</h1>
@@ -41,23 +53,27 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <h4>Details: </h4>
           <p>{details}</p>
-          <p className="price">{price}</p>
+          <p className="price">Ksh.{price}</p>
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
-              <span className="minus" onClick="">
+              <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
               <span className="num" onClick="">
-                0
+                {qty}
               </span>
-              <span className="plus" onClick="">
+              <span className="plus" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
           </div>
           <div className="buttons">
-            <button type="button" className="add-to-cart" onClick="">
+            <button
+              type="button"
+              className="add-to-cart"
+              onClick={() => onAdd(product, qty)}
+            >
               Add To Cart
             </button>
             <button type="button" className="buy-now" onClick="">
