@@ -22,6 +22,9 @@ const Cart = () => {
     toggleCartItemQuanitity,
     onRemove,
   } = useStateContext();
+
+  const handleCheckout = () => {};
+
   return (
     <div className="cart-wrapper" ref={cartRef}>
       <div className="cart-container">
@@ -103,7 +106,7 @@ const Cart = () => {
               <h3>Ksh{totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button className="btn" type="button" onClick="">
+              <button className="btn" type="button" onClick={handleCheckout}>
                 Pay with Stripe
               </button>
             </div>
