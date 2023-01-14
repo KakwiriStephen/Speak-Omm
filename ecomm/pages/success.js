@@ -7,12 +7,19 @@ import { useStateContext } from "../context/StateContext";
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
 
-  const [order, setOrder] = useState(null);
   return (
     <div className="success-wrapper">
       <div className="success">
         <p className="icon">
           <BsBagCheckFill />
+        </p>
+        <h2>Thank you for your order</h2>
+        <p className="email-msg">Check your mail box for the receipt</p>
+        <p className="description">
+          For any questions, Please mail
+          <a className="email" href="mailto:ngottakakwiri@gmail.com">
+            ngottakakwiri@gmail.com
+          </a>
         </p>
       </div>
     </div>
