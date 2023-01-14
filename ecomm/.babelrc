@@ -1,9 +1,14 @@
-{
-    "presets": ["next/babel","@babel/preset-react"]
-}
+// {
+//     "presets": ["next/babel","@babel/preset-react"]
+// }
 // {
 //     "presets": [
 //         "@babel/preset-env",
 //        ["@babel/preset-react", {"runtime": "automatic"}]
 //     ]
 // }
+
+{
+    "presets": ["next/babel"],
+    "plugins": []
+  }
