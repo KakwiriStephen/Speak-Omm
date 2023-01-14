@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useStateContext } from "../context/StateContext";
 
 const Success = () => {
+  const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
+
+  const [order, setOrder] = useState(null);
   return <div>success</div>;
 };
 
