@@ -12,3 +12,6 @@ export const client = sanityClient({
 
 const builder = imageUrlBuilder(client);
 export const urlFor = (source) => builder.image(source);
+
+// changed LIB To lib
+//Poseed on deployment for more research
