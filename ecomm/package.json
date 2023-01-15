@@ -7,9 +7,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint"
-
     },
     "dependencies": {
+        "@netlify/plugin-nextjs": "^4.30.0",
         "@next/font": "13.1.1",
         "@sanity/client": "^4.0.1",
         "@sanity/image-url": "^1.0.1",
