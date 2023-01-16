@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BsBagCheckFill } from "react-icons/bs";
 import Link from "next/link";
 import { useStateContext } from "../context/StateContext";
