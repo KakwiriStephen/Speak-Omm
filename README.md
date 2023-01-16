@@ -1,2 +1,2 @@
 
-## Ecommerce Website Using NextJs & Sanity.io
+## Modern Full Stack ECommerce Application with Stripe
