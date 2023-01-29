@@ -59,7 +59,7 @@ export const StateContext = ({ children }) => {
     setCartItems(newCartItems);
   };
 
-  //Cart Items
+  ///Cart Items
   const toggleCartItemQuanitity = (id, value) => {
     foundProduct = cartItems.find((item) => item._id === id);
     index = cartItems.findIndex((product) => product._id === id);
@@ -84,7 +84,7 @@ export const StateContext = ({ children }) => {
     }
   };
 
-  //updating items quantity
+  ///updating items quantity
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
   };
