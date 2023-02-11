@@ -1,2 +1,2 @@
 
-## Modern Full Stack ECommerce Application with Stripe.x
+## Modern Full Stack ECommerce Application with Stripe.xx
