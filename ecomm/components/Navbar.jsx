@@ -11,7 +11,11 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <p className="logo">
-        <Link href="/">{<BsSoundwave />}Sounds Store</Link>
+        <Link href="/">
+          <a>
+            <BsSoundwave /> Sounds Store
+          </a>
+        </Link>
       </p>
 
       <button
