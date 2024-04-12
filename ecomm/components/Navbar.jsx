@@ -13,7 +13,7 @@ const Navbar = () => {
       <p className="logo">
         <Link href="/">
           <a>
-            <BsSoundwave /> Sounds Store
+            <BsSoundwave /> PriceWise Sounds Store
           </a>
         </Link>
       </p>
